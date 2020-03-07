@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <title>
+    Mental arithmetic training
+  </title>
+</head>
+
+<body>
+  <div id="app" style="margin: auto; max-width: 1024px;">
+    <!-- settings -->
+    <div>
+      <h1>Settings</h1>
+      <div>
+        <span>Allowed operations</span>
+        <div v-for="op in settings.ops">
+          <input type="checkbox" v-model="op.activated"> {{op.label}}
+        </div>
+      </div>
+      <div>
+        <label for="opsCount">Number of operations: </label>
+        <input id="opsCount" min="1" type="number" v-model.number="settings.opsCount">
+      </div>
+      <div>
+        <span>Numbers range</span>
+        <div>
+          <label for="min">Min: </label>
+          <input id="min" type="number" v-model.number="settings.range.min">
+          <label for="max">Max: </label>
+          <input id="max" type="number" v-model.number="settings.range.max">
+        </div>
+        <label for="float">Allow floating values: </label>
+        <input id="float" type="checkbox" v-model="settings.allowFloat">
+      </div>
+    </div>
+    <!-- !settings -->
+    <!-- app -->
+    <div>
+      <h1>Training</h1>
+      <button v-on:click="generateExpression">
+        Generate new expression
+      </button>
+      <div>
+        <h3>Elapsed time: {{elapsedTime / 1000}}</h3>
+      </div>
+      <div>
+        <h3>
+          Resolve: {{expression}}
+        </h3>
+        <form @submit.prevent="onSubmit">
+          <input v-model.number="result" type="number">
+          <input type="submit" value="Submit">
+        </form>
+        <h1>{{status}}</h1>
+      </div>
+    </div>
+    <!-- !app -->
+  </div>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.1/math.min.js"
+    integrity="sha256-GRICDUAZi4ixXD2USKabeCWS1tT0noAuMFauMmXEmHs=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
+    integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
