@@ -2,4 +2,4 @@
 
 ## One shot training
 
-Download repository ZIP and open training/app.html in your browser
+Download repository ZIP and open `training/app.html` in your browser
