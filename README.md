@@ -1,5 +1,24 @@
-# zlan-arithmetic-training
+# zlan-arithmetics-training
 
-## One shot training
+## Project setup
+```
+yarn install
+```
 
-Download repository ZIP and open `training/app.html` in your browser
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
